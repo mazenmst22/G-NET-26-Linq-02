@@ -11,7 +11,7 @@ namespace G_NET_26_Linq_02
                 .Take(3);
             foreach (var product in top3)
             {
-                Console.WriteLine($"Name: {product.ProductName}, Price: {product.UnitPrice}");
+                Console.WriteLine($"Name: {product.ProductName}, Price: ${product.UnitPrice}");
             }
             #endregion
             #region Q2
@@ -24,10 +24,23 @@ namespace G_NET_26_Linq_02
                 .Take(pageSize);
             foreach (var item in pageProducts)
             {
-                Console.WriteLine($"Name: {item.ProductName}, Price: {item.UnitPrice}");
+                Console.WriteLine($"Name: {item.ProductName}, Price: ${item.UnitPrice}");
             }
             #endregion
-            
+            #region Q3
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var price25 = ProductList
+                .OrderBy(p => p.UnitPrice)
+                .TakeWhile(p => p.UnitPrice < 25);
+            foreach (var item in price25)
+            {
+                Console.WriteLine($"Name: {item.ProductName}, Price: ${item.UnitPrice}");
+            }
+            #endregion
+
+
         }
     }
 }
