@@ -201,7 +201,7 @@ namespace G_NET_26_Linq_02
             Console.WriteLine();
             var first50 = ProductList
                 .Select((product, index) => new { Product = product, Index = index })
-                .FirstOrDefault(p => p.Product.UnitPrice > 50);
+                .First(p => p.Product.UnitPrice > 50);
 
             if (first50 != null)
             {
@@ -212,6 +212,25 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine("Product Not found.");
             }
             #endregion
+            #region Q17
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var first500 = ProductList
+                .Select((product, index) => new { Product = product, Index = index })
+                .FirstOrDefault(p => p.Product.UnitPrice > 500);
+
+            if (first500 == null)
+            {
+                Console.WriteLine("Query returned null.");
+            }
+            else
+            {
+                Console.WriteLine($"Found:No.{first500.Index},Name: {first500.Product.ProductName} at ${first500.Product.UnitPrice}");
+            }
+
+            #endregion
+
         }
     }
 }
