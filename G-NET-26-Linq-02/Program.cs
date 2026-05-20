@@ -179,6 +179,22 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine(country);
             }
             #endregion
+            #region Q15
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            Dictionary<int, Product> productDictionary = ProductList.ToDictionary(p => p.ProductID);
+            if (productDictionary.TryGetValue(18, out Product product18))
+            {
+                Console.WriteLine($"Product ID: {product18.ProductID}");
+                Console.WriteLine($"Name: {product18.ProductName}");
+                Console.WriteLine($"Price: ${product18.UnitPrice}");
+            }
+            else
+            {
+                Console.WriteLine("Product with ID 18 was not found.");
+            }
+            #endregion
         }
     }
 }
