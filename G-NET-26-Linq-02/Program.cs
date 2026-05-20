@@ -89,7 +89,19 @@ namespace G_NET_26_Linq_02
                 }
                 Console.WriteLine("=============================");
             }
-            #endregion 
+            #endregion
+            #region Q8
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var CategoryMoreThan3 = ProductList
+                .GroupBy(p => p.Category)
+                .Where(g => g.Count() > 3);
+            foreach (var g in CategoryMoreThan3)
+            {
+                Console.WriteLine($"Category: {g.Key}, Product Count: {g.Count()}");
+            }
+            #endregion
         }
     }
 }
