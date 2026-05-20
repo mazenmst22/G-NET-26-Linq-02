@@ -1,4 +1,5 @@
-﻿using static G_NET_26_Linq_02.Data_Source.Source;
+﻿using G_NET_26_Linq_02.Models;
+using static G_NET_26_Linq_02.Data_Source.Source;
 namespace G_NET_26_Linq_02
 {
     public class Program
@@ -100,6 +101,25 @@ namespace G_NET_26_Linq_02
             foreach (var g in CategoryMoreThan3)
             {
                 Console.WriteLine($"Category: {g.Key}, Product Count: {g.Count()}");
+            }
+            #endregion
+            #region Q9
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var customerStats = from c in CustomerList
+                                group c by c.Country
+                                into g
+                                select new
+                                {
+                                    Country = g.Key,
+                                    Count = g.Count(),
+                                    TotalOrderValue = g.Sum(c => c.Orders.Sum(o => o.Total))
+                                };
+
+            foreach (var s in customerStats)
+            {
+                Console.WriteLine($"Country: {s.Country}, Count: {s.Count}, Total Value: ${s.TotalOrderValue}");
             }
             #endregion
         }
