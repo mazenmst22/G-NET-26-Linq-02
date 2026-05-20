@@ -74,6 +74,22 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine($"Category: {g.Key}, Product Count: {g.Count()}");
             }
             #endregion
+            #region Q7
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var groupedNames = ProductList
+                .GroupBy(P => P.Category, P => P.ProductName);
+            foreach(var g in groupedNames)
+            {
+                Console.WriteLine($"Category: {g.Key}");
+                foreach (var name in g)
+                {
+                    Console.WriteLine($"  - {name}");
+                }
+                Console.WriteLine("=============================");
+            }
+            #endregion 
         }
     }
 }
