@@ -55,8 +55,14 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine("Some Seafood products are out of stock.");
             }
             #endregion
-
-
+            #region Q5
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            int[] ids = { 3, 9, 13, 18 };
+            bool contains9 = ids.Contains(9);
+            Console.WriteLine(contains9);
+            #endregion
         }
     }
 }
