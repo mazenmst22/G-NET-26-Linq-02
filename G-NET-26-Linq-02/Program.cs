@@ -164,7 +164,21 @@ namespace G_NET_26_Linq_02
             {
                 Console.WriteLine(id);
             }
-            #endregion 
+            #endregion
+            #region Q14
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            string[] list1 = { "Germany", "France", "UK", "Spain" };
+            string[] list2 = { "france", "SPAIN", "Italy" };
+
+            var uniquelist1 = list1.Except(list2, StringComparer.OrdinalIgnoreCase);
+
+            foreach (var country in uniquelist1)
+            {
+                Console.WriteLine(country);
+            }
+            #endregion
         }
     }
 }
