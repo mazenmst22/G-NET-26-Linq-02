@@ -230,6 +230,18 @@ namespace G_NET_26_Linq_02
             }
 
             #endregion
+            #region Q18
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var table7 = Enumerable.Range(1, 10)
+                .Select(i => $"7 x {i} = {7 * i}");
+
+            foreach (var row in table7)
+            {
+                Console.WriteLine(row);
+            }
+            #endregion
 
         }
     }
