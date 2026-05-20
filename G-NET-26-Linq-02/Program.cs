@@ -39,6 +39,22 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine($"Name: {item.ProductName}, Price: ${item.UnitPrice}");
             }
             #endregion
+            #region Q4
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            bool allSeafood = ProductList
+                .Where(p => p.Category == "Seafood")
+                .All(p => p.UnitsInStock > 0);
+            if (allSeafood)
+            {
+                Console.WriteLine("All Seafood products are currently in stock.");
+            }
+            else
+            {
+                Console.WriteLine("Some Seafood products are out of stock.");
+            }
+            #endregion
 
 
         }
