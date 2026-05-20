@@ -14,6 +14,20 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine($"Name: {product.ProductName}, Price: {product.UnitPrice}");
             }
             #endregion
+            #region Q2
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            int pageNo = 2, pageSize = 5;
+            var pageProducts = ProductList
+                .Skip((pageNo - 1) * pageSize)
+                .Take(pageSize);
+            foreach (var item in pageProducts)
+            {
+                Console.WriteLine($"Name: {item.ProductName}, Price: {item.UnitPrice}");
+            }
+            #endregion
+            
         }
     }
 }
