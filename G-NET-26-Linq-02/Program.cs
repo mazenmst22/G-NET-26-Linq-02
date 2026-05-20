@@ -263,7 +263,20 @@ namespace G_NET_26_Linq_02
             var combinedSequence = productNames.Concat(customerNames);
             foreach (var name in combinedSequence)
             {
-                Console.WriteLine(name);
+                Console.Write(name+", ");
+            }
+            #endregion
+            #region Q21
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var pairedSales = ProductList.Zip(CustomerList, (product, customer) =>
+            $"{product.ProductName} sold to {customer.CompanyName}");
+
+            foreach (var sale in pairedSales)
+            {
+                Console.WriteLine(sale);
+
             }
             #endregion
 
