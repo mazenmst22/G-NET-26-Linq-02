@@ -137,6 +137,19 @@ namespace G_NET_26_Linq_02
             var mostExpensive = ProductList.Max(p => p.UnitPrice);
             Console.WriteLine($"Cheapest price: ${cheapest}, Most Expensive price: ${mostExpensive}");
             #endregion
+            #region Q12
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var distinctCategories = ProductList
+                                    .Select(p => p.Category)
+                                    .Distinct();
+
+            foreach (var c in distinctCategories)
+            {
+                Console.Write($"{c}, ");
+            }
+            #endregion
         }
     }
 }
