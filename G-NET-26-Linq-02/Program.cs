@@ -254,6 +254,18 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine(num);
             }
             #endregion
+            #region Q20
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var productNames = ProductList.Take(3).Select(p => p.ProductName);
+            var customerNames = CustomerList.Take(3).Select(c => c.CompanyName);
+            var combinedSequence = productNames.Concat(customerNames);
+            foreach (var name in combinedSequence)
+            {
+                Console.WriteLine(name);
+            }
+            #endregion
 
         }
     }
