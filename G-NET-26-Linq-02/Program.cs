@@ -150,6 +150,21 @@ namespace G_NET_26_Linq_02
                 Console.Write($"{c}, ");
             }
             #endregion
+            #region Q13
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            int[] setA = { 1, 3, 5, 7, 9, 11, 13 };
+            int[] setB = { 3, 6, 9, 12, 15, 13 };
+
+            var uniqueToSetA = setA.Except(setB);
+
+            Console.WriteLine("Product IDs in A and not in B:");
+            foreach (var id in uniqueToSetA)
+            {
+                Console.WriteLine(id);
+            }
+            #endregion 
         }
     }
 }
