@@ -242,6 +242,18 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine(row);
             }
             #endregion
+            #region Q19
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var evenNumbers = Enumerable.Range(1, 30)
+                .Where(n => n % 2 == 0);
+
+            foreach (var num in evenNumbers)
+            {
+                Console.WriteLine(num);
+            }
+            #endregion
 
         }
     }
