@@ -122,6 +122,21 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine($"Country: {s.Country}, Count: {s.Count}, Total Value: ${s.TotalOrderValue}");
             }
             #endregion
+            #region Q10
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            int totalUnits = ProductList.Sum(p => p.UnitsInStock);
+            Console.WriteLine($"Total units in stock: {totalUnits}");
+            #endregion
+            #region Q11
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var cheapest = ProductList.Min(p => p.UnitPrice);
+            var mostExpensive = ProductList.Max(p => p.UnitPrice);
+            Console.WriteLine($"Cheapest price: ${cheapest}, Most Expensive price: ${mostExpensive}");
+            #endregion
         }
     }
 }
