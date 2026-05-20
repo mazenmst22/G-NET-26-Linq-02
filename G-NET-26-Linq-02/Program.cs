@@ -195,6 +195,23 @@ namespace G_NET_26_Linq_02
                 Console.WriteLine("Product with ID 18 was not found.");
             }
             #endregion
+            #region Q16
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var first50 = ProductList
+                .Select((product, index) => new { Product = product, Index = index })
+                .FirstOrDefault(p => p.Product.UnitPrice > 50);
+
+            if (first50 != null)
+            {
+                Console.WriteLine($"Found: No.{first50.Index}, Name {first50.Product.ProductName} at ${first50.Product.UnitPrice}");
+            }
+            else
+            {
+                Console.WriteLine("Product Not found.");
+            }
+            #endregion
         }
     }
 }
