@@ -63,6 +63,17 @@ namespace G_NET_26_Linq_02
             bool contains9 = ids.Contains(9);
             Console.WriteLine(contains9);
             #endregion
+            #region Q6
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine();
+            var groupedProducts = ProductList.GroupBy(p => p.Category);
+
+            foreach (var g in groupedProducts)
+            {
+                Console.WriteLine($"Category: {g.Key}, Product Count: {g.Count()}");
+            }
+            #endregion
         }
     }
 }
